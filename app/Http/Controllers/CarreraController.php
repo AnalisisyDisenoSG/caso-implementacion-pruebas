@@ -9,7 +9,7 @@ class CarreraController extends Controller
 {
     public function store(Request $request)
     {
-       // Carrera::create($request->all());
+        Carrera::create($request->all());
         
         return response()->json([
             'message' => 'Carrera creada exitosamente',
