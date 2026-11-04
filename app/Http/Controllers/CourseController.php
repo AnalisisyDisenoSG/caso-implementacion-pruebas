@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
+    public function index(): JsonResponse
+    {
+        return response()->json(Course::query()->latest()->get());
+    }
+
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([

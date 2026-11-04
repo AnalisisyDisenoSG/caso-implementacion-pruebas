@@ -2,6 +2,18 @@
 
 use App\Models\Course;
 
+it('returns courses when opening the API link', function () {
+    Course::factory()->create([
+        'name' => 'Diseño de Sistemas',
+    ]);
+
+    $response = $this->getJson('/api/courses');
+
+    $response
+        ->assertOk()
+        ->assertJsonFragment(['name' => 'Diseño de Sistemas']);
+});
+
 it('creates a course and saves it in the database', function () {
     $courseData = [
         'name' => 'Diseño de Sistemas',
