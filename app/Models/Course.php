@@ -9,5 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 #[Fillable(['name', 'description'])]
 class Course extends Model
 {
+
+
+
+
+//comentario para el commit
     use HasFactory;
 }
