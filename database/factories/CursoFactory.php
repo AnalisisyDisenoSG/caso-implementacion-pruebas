@@ -1,0 +1,17 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class CursoFactory extends Factory
+{
+    public function definition(): array
+    {
+        return [
+            'sigla' => fake()->unique()->bothify('IF####'),
+            'nombre_curso' => fake()->sentence(3),
+            'creditos' => fake()->numberBetween(1, 6),
+        ];
+    }
+}
